@@ -6,7 +6,7 @@
 int tamanhoDoArray(char caminho[]);
 int dadosDoArquivo();
 void selectionSort(int num[], int TAM);
-void insertSort(int num[], int TAM);
+void insertionSort(int num[], int TAM);
 void bubbleSort(int num[], int TAM);
 void pastaDoArquivo(char caminho[]);
 void abrirArquivoOrdenar(int opcao);
@@ -16,7 +16,7 @@ void nomeDoArquivo(char caminho[]);
 int main()
 {
     int escolha = 0;
-    printf("Escolha o tipo de ordenação\n Digite 1 - SelectSort\n Digite 2 - InsertSort\n Digite 3 - BubbleSort\n");
+    printf("Escolha o tipo de ordenação\n Digite 1 - SelectSort\n Digite 2 - InsertionSort\n Digite 3 - BubbleSort\n");
     scanf("%i", &escolha);
 
     abrirArquivoOrdenar(escolha);
@@ -51,9 +51,9 @@ void abrirArquivoOrdenar(int opcao)
         salvandoArquivoOrdenado("/home/before/ordenado_selectionSort.txt", vetor, TAM);
         break;
     case 2:
-        insertSort(vetor, TAM - 1);
+        insertionSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("/home/before/ordenado_insertSort.txt", vetor, TAM);
+        salvandoArquivoOrdenado("/home/before/ordenado_insertionSort.txt", vetor, TAM);
         break;
     case 3:
         bubbleSort(vetor, TAM - 1);
@@ -69,7 +69,7 @@ void pastaDoArquivo(char caminho[])
 {
     char pasta[100];
 
-    printf("Digite o caminho e da pasta onde estao arquivo\n exemplo: C:\\arquivos\\ \n");
+    printf("Digite o caminho e da pasta onde estao arquivo\n exemplo: C:\\\\arquivos\\\\ \n");
     scanf("%s", pasta);
     strcpy(caminho, pasta); //colocar o caminho
 }
@@ -106,7 +106,7 @@ int tamanhoDoArray(char caminho[])
     } while (caractere != EOF);
 
 
-    printf("%i",contagem);
+    printf("\n quantidade do registro %i",contagem);
     fclose(arquivo);
     return contagem;
 }
@@ -140,7 +140,7 @@ void selectionSort(int num[], int TAM)
     printf("\n\n Tempo: %f \n\n", ((tempFimS - tempIniS) / (double)CLOCKS_PER_SEC));
 }
 
-void insertSort(int num[], int TAM)
+void insertionSort(int num[], int TAM)
 {
     clock_t tempIniI, tempFimI = 0;
     tempIniI = clock();
@@ -158,7 +158,7 @@ void insertSort(int num[], int TAM)
         num[i + 1] = valorAtual;
     }
 
-    printf("\nInsertSort\n\n");
+    printf("\nInsertionSort\n\n");
     //for (x = 0; x < (TAM); x++){
     //    printf("%d ", num[x]);
     //}
