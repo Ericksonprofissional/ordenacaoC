@@ -48,17 +48,17 @@ void abrirArquivoOrdenar(int opcao)
     case 1:
         selectionSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("/home/before/ordenado_selectionSort.txt", vetor, TAM);
+        salvandoArquivoOrdenado("C:\\ordenado_selectionSort.txt", vetor, TAM);
         break;
     case 2:
         insertionSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("/home/before/ordenado_insertionSort.txt", vetor, TAM);
+        salvandoArquivoOrdenado("C:\\ordenado_insertionSort.txt", vetor, TAM);
         break;
     case 3:
         bubbleSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("/home/before/ordenado_bubbleSort.txt", vetor, TAM);
+        salvandoArquivoOrdenado("C:\\ordenado_bubbleSort.txt", vetor, TAM);
         break;
     default:
         break;
