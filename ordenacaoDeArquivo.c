@@ -48,17 +48,23 @@ void abrirArquivoOrdenar(int opcao)
     case 1:
         selectionSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("C:\\ordenado_selectionSort.txt", vetor, TAM);
+        char salvarArquivoS [50] = "para_ordenado_selectionSort.txt";
+        strcat(caminho,salvarArquivoS);
+        salvandoArquivoOrdenado(caminho, vetor, TAM);
         break;
     case 2:
         insertionSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("C:\\ordenado_insertionSort.txt", vetor, TAM);
+        char salvarArquivoI [50] = "para_ordenado_insertionSort.txt";
+        strcat(caminho,salvarArquivoI);
+        salvandoArquivoOrdenado(caminho, vetor, TAM);
         break;
     case 3:
         bubbleSort(vetor, TAM - 1);
         fclose(arquivo);
-        salvandoArquivoOrdenado("C:\\ordenado_bubbleSort.txt", vetor, TAM);
+        char salvarArquivoB [50] = "para_ordenado_bubbleSort.txt";
+        strcat(caminho,salvarArquivoB);
+        salvandoArquivoOrdenado(caminho, vetor, TAM);
         break;
     default:
         break;
@@ -106,7 +112,7 @@ int tamanhoDoArray(char caminho[])
     } while (caractere != EOF);
 
 
-    printf("\n quantidade do registro %i",contagem);
+    printf("\n quantidade do registro %i",contagem -1);
     fclose(arquivo);
     return contagem;
 }
